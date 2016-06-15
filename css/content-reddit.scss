@@ -1,0 +1,276 @@
+/* =========================================================================
+ *
+ * content-reddit.scss
+ * 
+ * ========================================================================= */
+body.domain-reddit {
+// REDDIT overrides
+// For login:
+.split-panel { 
+    padding-top: 120px !important;
+    position: relative;
+}
+
+/**
+ *
+ * Login styles 
+ *
+ */
+#carrot-login-banner {
+    background: #FFFBCE;
+    border: 1px solid #FAEF6C;
+    border-radius: 5px;
+
+    left: 60px;
+    padding: 10px 14px;
+    position: absolute;
+    right: 60px;
+    top: 20px;
+}
+
+#carrot__logo {
+    height: 54px;
+    float: left;
+    margin-right: 14px;
+    width: 54px;
+
+    img {
+        height: 54px;
+        width: 54px;
+    }
+}
+
+#carrot__text {
+    float: left;
+    padding-top: 5px;
+}
+#carrot__text-login {
+    font-size: 12px;
+    margin-bottom: 10px;
+}
+
+/**
+ *
+ * Chat injection
+ *
+ */
+$CHAT_HEIGHT: 419px;
+
+#carrot-room-wrapper {
+    @include transition(bottom 0.15s);
+    background: #F3F7FA;
+    border-bottom: none;
+    box-shadow: 0 0 2px #343434;
+    bottom: 0;
+    height: $CHAT_HEIGHT;
+    position: fixed;
+    right: 6px;
+    width: 298px;
+    z-index: 2147483647 !important;
+
+    .loading__wrapper {
+        display: none;
+    }
+}
+#carrot-room-wrapper.minimized {
+    bottom: -($CHAT_HEIGHT - 36px);
+    background: #303030;
+    color: #f0f0f0;
+    font-family: verdana, arial, helvetica, sans-serif;
+}
+#carrot__iframe {
+    z-index: 99999999999999;
+}
+#carrot-room-wrapper.loading {
+    .loading__wrapper {
+        display: block;
+        left: 2px;
+        line-height: 37px;
+        font-family: verdana;
+        position: absolute;
+        right: 0;
+        text-align: left;
+        top: 0px;
+        z-index: 99999;
+
+
+        // Loading header
+        .embed-header__logo {
+            /*height: 27px;*/
+            /*padding-left: 6px;*/
+            /*position: relative;*/
+            /*top: -6px;*/
+            /*width: 26px;*/
+
+            -webkit-filter: grayscale(100%);
+            filter: grayscale(100%);
+
+            background-color: rgba(255,255,255,.1);
+            border-radius: 2px;
+            box-shadow: 0 0 0 1px rgba(255,255,255,.2);
+            height: 20px;
+            left: 6px;
+            margin-top: 8px;
+            position: relative;
+            top: -9px;
+            width: 20px;
+        }
+        .embed-header__title {
+            color: #fff;
+            font-size: 12px;
+            font-weight: bold;
+            display: inline-block;
+            margin-left: 9px;
+            max-width: 47%;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .embed-header__label {
+            color: rgba(255,255,255,.6);
+            display: inline-block;
+            font-size: 12px;
+            position: relative;
+            vertical-align: top;
+        }
+
+        .embed-header__window-actions {
+            bottom: 0;
+            height: 38px;
+            position: absolute;
+            right: 0;
+            width: 72px;
+            top: 0;
+        }
+    }
+}
+#embed-preload-close { 
+    cursor: pointer !important;
+    position: absolute;
+    top: 2px;
+    right: 5px;
+    
+    img {
+        cursor: pointer !important;
+        width: 35px;
+        height: 34px;
+    }
+}
+}
+
+/**
+ *
+ * Carrot rooms wrapper
+ *
+ */
+#carrot__rooms-wrapper {
+    box-sizing: border-box;
+    margin: 10px 0;
+    position: relative;
+
+    #carrot__rooms-inner {
+        box-sizing: border-box;
+        background: #F9F9F9;
+        border: 1px solid #EBEBEB;
+        border-radius: 5px;
+        padding: 8px 0 8px 12px;
+        position: relative;
+
+        #carrot__rooms-header {
+            color: #A5A5A5;
+            font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen,Ubuntu,Cantarell,"Open Sans","Helvetica Neue",sans-serif;
+            font-size: 1.3em;
+            font-weight: 500;
+            letter-spacing: 0.1px;
+            margin: 0 0 14px 0;
+            position: relative;
+            text-transform: uppercase;
+        }
+
+        .carrot__room-wrapper--unread {
+            .carrot__room-icon {
+                -webkit-filter: grayscale(100%);
+                filter: grayscale(100%);
+            }
+        }
+
+        $ROOM_CELL_SIZE: 57px;
+        .carrot__room-wrapper {
+            cursor: pointer;
+            display: block;
+            float: left;
+            height: $ROOM_CELL_SIZE + 30;
+            margin: 0 14px 16px 0;
+            position: relative;
+            width: $ROOM_CELL_SIZE;
+
+            .carrot__room-wrapper-inner {
+                bottom: 0;
+                left: 0;
+                overflow: hidden;
+                position: absolute;
+                right: 0;
+                top: 0;
+            }
+        }
+
+        .carrot__room-mentioned {
+            background: #F27C22;
+            color: #ffffff;
+            border-radius: 50px;
+            font-size: 10px;
+            height: 14px;
+            padding: 1px;
+            position: absolute;
+            text-align: center;
+            top: -7px;
+            right: -7px;
+            width: 14px;
+            z-index: 999;
+        }
+
+        .carrot__room-icon {
+            background-position: center center;
+            background-size: 100% auto;
+            border-radius: 4px;
+            box-sizing: border-box;
+            box-shadow: inset 0 0 0 1px rgba(0,0,0,.2);
+            height: $ROOM_CELL_SIZE;
+            margin-bottom: 5px;
+            width: $ROOM_CELL_SIZE;
+        }
+
+        .carrot__room-slug {
+            text-align: center;
+            display:inline-block;
+            font-weight: bold;
+            overflow: hidden !important;
+            position: relative;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            width: $ROOM_CELL_SIZE;
+        }
+        .carrot__room-count {
+            font-size: 8px;
+            height: 14px;
+            overflow: hidden;
+            position: relative;
+            text-align: center;
+            width: $ROOM_CELL_SIZE;
+        }
+
+        .online-icon {
+            color: #7ED321;
+            position: relative;
+        }
+        .online-icon:before {
+            content: "•";
+            color: #7ED321;
+            font-size: 13px;
+            position: absolute;
+            left: -8px;
+            top: -4px;
+        }
+    }
+}

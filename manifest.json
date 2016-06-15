@@ -1,0 +1,48 @@
+{
+"update_url": "https://clients2.google.com/service/update2/crx",
+
+    "manifest_version": 2,
+    "name": "Carrot - Chatrooms on reddit",
+    "short_name": "Carrot.com",
+    "description": "Find chatrooms on subreddits. Use your reddit account. No sign-up required.",
+    "version": "2.6.6",
+    "author": "Carrot",
+
+    "icons": {
+        "16": "img/icon__16.png",
+        "48": "img/icon__48.png",
+        "128": "img/icon__128.png"
+    },
+
+    "browser_action": {
+        "default_icon": "img/icon.png",
+        "default_popup": "popup.html",
+        "default_title": "Carrot is Live Chat for Reddit"
+    },
+    "background": {
+        "scripts": ["build/background.js"],
+        "persistent": false 
+    },
+    "permissions": [
+        "*://*/",
+        "alarms",
+        "tabs",
+        "storage",
+        "unlimitedStorage"
+    ],
+    "content_scripts": [
+        {
+            "matches": [
+                "*://*.localhost/*",
+                "*://*.carrot.com/*",
+                "*://*.reddit.com/*"
+            ],
+            "css": [ "build/content.css" ],
+            "js": [ "js/lib/jquery.js", "build/content.js" ],
+            "run_at": "document_start"
+        }
+    ],
+    "web_accessible_resources": [
+        "img/*"
+    ]
+}

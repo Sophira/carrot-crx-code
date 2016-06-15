@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="9px" height="11px" viewBox="0 0 9 11" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <!-- Generator: Sketch 3.4.2 (15857) - http://www.bohemiancoding.com/sketch -->
+    <title>icon__lock</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <g id="icon__lock" sketch:type="MSLayerGroup" fill="#4A4A4A">
+            <g id="lock@3x" sketch:type="MSShapeGroup">
+                <g id="Page-1">
+                    <path 
+                    fill='#ffffff'
+                    d="M7.75989545,3.2946159 C7.75989545,1.48029019 6.16429125,0 4.20833144,0 C2.24639561,0 0.654377015,1.48029019 0.654377015,3.2946159 L0.654377015,4.94455732 L0,4.94455732 L0,10.9899072 L8.41188205,10.9899072 L8.41188205,4.94455732 L7.75989545,4.94455732 L7.75989545,3.2946159 L7.75989545,3.2946159 Z M1.60038506,3.2946159 C1.60038506,1.96429518 2.7669092,0.879857875 4.20833144,0.879857875 C5.6404908,0.879857875 6.811497,1.96429518 6.811497,3.2946159 L6.811497,4.94455732 L1.60038506,4.94455732 L1.60038506,3.2946159 L1.60038506,3.2946159 L1.60038506,3.2946159 Z" id="l-2"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
